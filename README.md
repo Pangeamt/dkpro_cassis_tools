@@ -1,6 +1,6 @@
 # Dkpro cassis tools
 
-Toolkit for managing uima cas xmi file
+Toolkit for managing uima cas xmi files. 
 
 ## Install
 
@@ -8,14 +8,14 @@ Toolkit for managing uima cas xmi file
 pip install -U git+https://github.com/pangeamt/dkpro_cassis_tools
 ```
 
-## Load cas from zip
+## Load cas from a zip file
 ```python
 from dkpro_cassis_tools import load_cas_from_zip_file
 with open('cas.zip', 'rb') as f:
     cas = load_cas_from_zip_file(f)
 ```
 
-## Save cas to zip
+## Save cas to a zip file
 ```python
 from dkpro_cassis_tools import dump_cas_to_zip_file
 
@@ -72,7 +72,6 @@ new_cas = create_cas_from_sentences(sentences)
 
 # Save it
 with open('new_cas.zip', 'rb') as f:
-    dump_cas_to_zip_file(new_cas, f)    
-
+    dump_cas_to_zip_file(new_cas, f)
 ```
 
