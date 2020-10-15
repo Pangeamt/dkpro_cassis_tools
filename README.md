@@ -29,6 +29,8 @@ with open('cas.zip', 'rb') as f:
 from dkpro_cassis_tools import load_cas_from_zip_file
 from dkpro_cassis_tools import restore_cas_segmentation_by_newline
 from dkpro_cassis_tools import dump_cas_to_zip_file
+
+
 # Open the cas
 with open('cas.zip', 'rb') as f:
     cas = load_cas_from_zip_file(f)
@@ -47,6 +49,7 @@ from dkpro_cassis_tools import load_cas_from_zip_file
 from dkpro_cassis_tools import dump_cas_to_zip_file
 from dkpro_cassis_tools import create_cas_from_sentences
 from dkpro_cassis_tools import SENTENCE_NS
+
 
 sentences = []
 
