@@ -43,7 +43,7 @@ with open('re_segmented_cas.zip', 'rb') as f:
     dump_cas_to_zip_file(cas, f)    
 ```
 
-## Combine sentences for multiple cas
+## Combine sentences from one or more cas
 ```python
 from dkpro_cassis_tools import load_cas_from_zip_file
 from dkpro_cassis_tools import dump_cas_to_zip_file
@@ -56,7 +56,6 @@ sentences = []
 # Extract some sentences from cas1 
 with open('cas1.zip', 'rb') as f:
     cas1 = load_cas_from_zip_file(f)
-
 for sentence in cas1.select(SENTENCE_NS):
     if len(sentence.get_covered_text())>10:
         sentences.append((cas1, sentence))
@@ -68,6 +67,7 @@ for sentence in cas2.select(SENTENCE_NS):
     if len(sentence.get_covered_text())>10:
         sentences.append((cas2, sentence))
 
+# Create the new cas
 new_cas = create_cas_from_sentences(cas1.typesystem, sentences) 
 
 # Save the new cas
