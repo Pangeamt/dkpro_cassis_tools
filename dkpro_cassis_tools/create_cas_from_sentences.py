@@ -4,12 +4,18 @@ from cassis.typesystem import FeatureStructure
 from dkpro_cassis_tools.ns import TOKEN_NS, SENTENCE_NS, NAMED_ENTITY_NS
 
 
-def create_cas_from_sentences(type_system, sentences: List[Tuple[Cas, FeatureStructure]]) -> Cas:
+def create_cas_from_sentences(sentences: List[Tuple[Cas, FeatureStructure]], type_system=None) -> Cas:
     """
     :param type_system: The type system of the new cas and all the cas in the sentences list
     :param sentences: a list of tuple of 2 elements: a cas and a sentence annotation assiociated with this cas)
     :return: a new Cas object
     """
+
+    if not sentences:
+        raise ValueError('Sentence list is empty')
+
+    if type_system is None:
+        type_system = sentences[0][0].typesystem
 
     # Create text for new cas
     text = ''

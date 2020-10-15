@@ -7,14 +7,13 @@ def test_create_cas_from_sentences():
     with open('data/cas.zip', 'rb') as f:
         cas = load_cas_from_zip_file(f)
 
-    type_system = cas.typesystem
     sentences = list(cas.select(SENTENCE_NS))
 
     even_sentences = []
     for i, sentence in enumerate(sentences):
         if i % 2 == 0:
             even_sentences.append((cas, sentence))
-    even_cas = create_cas_from_sentences(type_system, even_sentences)
+    even_cas = create_cas_from_sentences(even_sentences)
 
     for i, sentence in enumerate(list(even_cas.select(SENTENCE_NS))):
         assert sentence.get_covered_text() == sentences[i*2].get_covered_text()
