@@ -68,7 +68,7 @@ for sentence in cas2.select(SENTENCE_NS):
         sentences.append((cas2, sentence))
 
 # Create the new cas
-new_cas = create_cas_from_sentences(cas1.typesystem, sentences) 
+new_cas = create_cas_from_sentences(sentences) 
 
 # Save it
 with open('new_cas.zip', 'rb') as f:
