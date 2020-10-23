@@ -75,3 +75,10 @@ with open('new_cas.zip', 'rb') as f:
     dump_cas_to_zip_file(new_cas, f)
 ```
 
+## Tokenize cas
+```python
+from dkpro_cassis_tools import tokenize_cas
+
+
+```
+
