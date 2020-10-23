@@ -77,7 +77,18 @@ with open('new_cas.zip', 'rb') as f:
 
 ## Tokenize cas
 ```python
+from dkpro_cassis_tools import load_cas_from_zip_file
 from dkpro_cassis_tools import tokenize_cas
+
+
+wakati = MeCab.Tagger("-Owakati")
+
+def tokenize(text: str) -> List[str]:
+    return wakati.parse(text).split()
+
+with open('data/cas_tokenize.zip', 'rb') as f:
+    cas = load_cas_from_zip_file(f)
+    mecab_tokenized_cas = tokenize_cas(cas, tokenize)
 
 
 ```
