@@ -15,8 +15,12 @@ setuptools.setup(
     url="https://github.com/pangeamt/dkpro_cassis_tools",
     packages=setuptools.find_packages(),
     install_requires=[
-        'dkpro-cassis>=0.4.0'
+        'dkpro-cassis>=0.4.0',
+        'pytokenizations>=0.6.0'
     ],
+    tests_require=[
+        'mecab-python3>=1.0.2',
+        'unidic-lite>=1.0.7'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
