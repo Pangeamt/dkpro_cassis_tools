@@ -16,7 +16,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'dkpro-cassis>=0.4.0',
-        'pytextspan>=0.3.1'
+        'sequence_transfer>=0.1.0'
     ],
     tests_require=[
         'mecab-python3>=1.0.2',
