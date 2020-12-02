@@ -15,7 +15,7 @@ setuptools.setup(
     url="https://github.com/pangeamt/dkpro_cassis_tools",
     packages=setuptools.find_packages(),
     install_requires=[
-        'dkpro-cassis>=0.4.0',
+        'dkpro-cassis>=0.5.0',
         'sequence_transfer>=0.1.0'
     ],
     tests_require=[
