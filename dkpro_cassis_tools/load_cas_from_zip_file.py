@@ -1,10 +1,10 @@
 import zipfile
 from typing import Union, Tuple
 from typing import BinaryIO
-from cassis import Cas, load_typesystem, load_cas_from_xmi
+from cassis import Cas, TypeSystem, load_typesystem, load_cas_from_xmi
 
 
-def load_cas_from_zip_file(f: BinaryIO, return_file_names=False) -> Union[Cas, Tuple[Cas, str, str]]:
+def load_cas_from_zip_file(f: BinaryIO, return_type_system=False) -> Union[Cas, Tuple[Cas, TypeSystem]]:
     archive = zipfile.ZipFile(f)
 
     # Type system
@@ -21,7 +21,7 @@ def load_cas_from_zip_file(f: BinaryIO, return_file_names=False) -> Union[Cas, T
     with archive.open(xmi_file, 'r') as f:
         cas = load_cas_from_xmi(f, typesystem=type_system)
 
-    if return_file_names:
-        return cas, xmi_file.filename, type_system_file.filename
+    if return_type_system:
+        return cas, type_system
     else:
         return cas
