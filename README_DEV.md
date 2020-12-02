@@ -6,7 +6,7 @@
 python setup.py sdist bdist_wheel
 ```
 
-## Upoad package
+## Upload package to PYPI
 ```
 python twine upload dist/*
 ```
