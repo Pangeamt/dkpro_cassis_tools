@@ -5,7 +5,7 @@ Toolkit for managing uima cas xmi files.
 ## Install
 
 ```BASH
-pip install -U git+https://github.com/pangeamt/dkpro_cassis_tools
+pip install dkpro-cassis-tools
 ```
 
 ## Load cas from a zip file
