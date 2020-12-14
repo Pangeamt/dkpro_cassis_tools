@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="dkpro_cassis_tools",
-    version="0.0.3",
+    version="0.0.4",
     author="Laurent Bié",
     author_email="l.bie@pangeanic.com  ",
     description="Tools for dkpro cassis",
